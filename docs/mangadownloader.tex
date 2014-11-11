@@ -1,0 +1,62 @@
+\documentclass{article}
+\begin{document}
+
+\author{somekenyan}
+\title{MangaDownloader document}
+\maketitle
+
+\section{Introduction}
+
+This document is to show me what I have implemented in the mangadownloader program. Currently I am working on only downloading from mangapanda
+
+\section{Modules}
+These are the small pieces of the program that will be combined to get the big program
+
+\begin{itemize}
+\item Download images
+It should download an image from a page, give it an approppriate name depending on the page number and then save it to the appropriate folder
+\item Download manga chapter
+This should be able to download a complete manga, going through the pages and getting all the pages
+\item List episodes
+This should be able to list various chapters of the manga
+\item List anime
+This should be able to list all the anime manga in the site
+\end{itemize}
+
+\subsection{Manga downloader}
+Trying to divide the application to very small manageable pieces such that I can try my best to become better organized.
+The main components of this should be:
+\begin{itemize}
+\item List all the manga titles of the site
+\item Access a particular manga and list all the chapters available in the site
+\item Download the chapters of a particular selected manga
+\item Save manga in a folder. Perhaps use zip format to maintain the size
+\end{itemize}
+
+\subsection{Manga reader}
+\begin{itemize}
+\item Access a folder and see whether it has manga or has various chapters
+\item Read images in a folder based on their sequence in the manga
+\end{itemize}
+
+\subsection{XML parsing}
+
+THe details of the tags to be used while parsing a page will be stored in an XML file. This will help later on when I decide to add other manga sites.
+
+\section{Planning}
+Research shall be done depending on what submodule is being worked on. After research implementation should take place immediately after. Documentation should be done along the way too.
+
+\subsection{XML and downloading}
+I am using the xml.dom.minidom package for parsing through xml. 
+I want to access the site and list the chapters for one piece using xmlparser and a downloader I will wirte. For modularity, I will also try the same for another site
+
+I can already download images although still not sure about the saving of the images.
+
+I get a list of all the chapters. This will then be passed to imagedownload function downloading the images sequentially
+
+I can get the link of the image to be downloaded from the site.
+
+\section(Coding)
+I will save the manga downloaded in cbz format. With this, I implemented a module named cbrmaker to do this. This way, I will not need to write a manga reader as the default document viewer can be used to view the manga.
+
+\end{document}
